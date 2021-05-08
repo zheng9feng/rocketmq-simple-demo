@@ -26,6 +26,7 @@ public class SimpleFailedConsumer implements RocketMQListener<MessageExt> {
     @Override
     public void onMessage(MessageExt message) {
         System.out.println(message);
+
         int reconsumeTimes = message.getReconsumeTimes();
         System.out.println("当前重复消费次数为:" + reconsumeTimes);
         if (reconsumeTimes >= 2) {

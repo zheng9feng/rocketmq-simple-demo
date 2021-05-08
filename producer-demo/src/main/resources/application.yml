@@ -1,0 +1,13 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /rocketmq-producer
+spring:
+  application:
+    name: rocketmq-producer-demo
+
+rocketmq:
+  # namesrv地址
+  name-server: 192.168.2.10:9876
+  producer:
+    group: rocketmq-producer-group

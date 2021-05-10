@@ -66,4 +66,14 @@ public class SimpleProducerTest {
                 .money(new BigDecimal("10")).build();
         simpleProducer.sendObject("sync-message-exception-topic-1", simpleMessageDTO);
     }
+
+    @Test
+    public void testSendOrderMessage() {
+        for (int i = 0; i < 10; i++) {
+            simpleProducer.sendOrderMessage(
+                    "order-message-topic-1",
+                    "this is a order message:" + i,
+                    "get-target-queue-for-order-message");
+        }
+    }
 }
